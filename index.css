@@ -1,21 +1,95 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: url("img/bg.jpg");
+  background-size: 100% 100%;
+}
+
+#logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+#logo img {
+  width: 100px;
+}
+
 #plot {
-  width: 100%;
-  height: 400px;
-  border: 1px solid red;
+  margin: 10px;
+  flex: 1;
+  position: relative;
+  color: white;
+}
+#plot::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 100px;
+  width: calc(100% - 200px);
+  height: calc(100% - 60px);
+  background-image: url("img/plotbg.svg");
+  background-position: center center;
+  background-size: cover;
+}
+
+#plot #delicious {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#plot #disgusting {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#plot #hard {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#plot #easy {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#bottomBar {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 10px;
+  background: white;
+}
+
+#hint {
+  margin-right: 20px;
 }
 
 #user-fruits {
-  padding: 0
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
 }
 
 #user-fruits li {
   list-style: none;
   padding: 0;
-  display: inline-block;
-  font-size: 60px;
+  font-size: 42px;
 }
