@@ -30,11 +30,13 @@ const onFruitup = (e) => {
   }
 }
 
-document.querySelector('#user-fruits').addEventListener('mousedown', (e) => {
+const onFruitSelect = (e) => {
   fruit = e.target
   if (fruit.tagName !== 'LI') return
   document.addEventListener('mousemove', onFruitMove)
+}
 
-})
+document.querySelector('#user-fruits').addEventListener('mousedown', onFruitSelect);
+document.querySelector('#plot').addEventListener('mousedown', onFruitSelect);
 
 document.addEventListener('mouseup', onFruitup)
