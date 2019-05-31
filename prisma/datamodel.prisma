@@ -1,0 +1,12 @@
+type Fruit {
+  id: ID! @id
+  name: String! @unique
+  positions: [Position!]!
+}
+
+type Position {
+  id: ID! @id
+  x: Float
+  y: Float
+  fruit: Fruit!
+}
