@@ -13,7 +13,7 @@ body {
   padding: 0
 }
 
-#user-fruits li {
+#user-fruits li, #plot li {
   list-style: none;
   padding: 0;
   display: inline-block;
