@@ -7,11 +7,13 @@
   "devDependencies": {
     "@types/graphql": "14.2.0",
     "@types/ws": "6.0.1",
+    "live-server": "^1.2.1",
     "ts-node": "7.0.1",
     "typescript": "3.5.1"
   },
   "scripts": {
-    "start": "tsc src/index.ts --watch",
-    "seed": "ts-node prisma/seed.ts"
+    "start": "tsc src/index.ts --module UMD --watch",
+    "seed": "ts-node prisma/seed.ts",
+    "serve": "live-server --port=9094 ."
   }
 }

@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -34,45 +33,57 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-exports.__esModule = true;
-var prisma_client_1 = require("../prisma/generated/prisma-client");
-function main() {
-    return __awaiter(this, void 0, void 0, function () {
-        var fruits, newPosition, positions, fruitsWithPositions;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, prisma_client_1.prisma.fruits()];
-                case 1:
-                    fruits = _a.sent();
-                    console.log("Fetch all fruits: ", fruits);
-                    return [4 /*yield*/, prisma_client_1.prisma.createPosition({
-                            x: 0,
-                            y: 0,
-                            fruit: {
-                                connect: {
-                                    name: 'coconut'
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
+    }
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports", "../prisma/generated/prisma-client"], factory);
+    }
+})(function (require, exports) {
+    "use strict";
+    exports.__esModule = true;
+    var prisma_client_1 = require("../prisma/generated/prisma-client");
+    function main() {
+        return __awaiter(this, void 0, void 0, function () {
+            var fruits, newPosition, positions, fruitsWithPositions;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, prisma_client_1.prisma.fruits()];
+                    case 1:
+                        fruits = _a.sent();
+                        console.log("Fetch all fruits: ", fruits);
+                        return [4 /*yield*/, prisma_client_1.prisma.createPosition({
+                                x: 0,
+                                y: 0,
+                                fruit: {
+                                    connect: {
+                                        name: 'coconut'
+                                    }
                                 }
-                            }
-                        })];
-                case 2:
-                    newPosition = _a.sent();
-                    console.log("Created a new position: ", newPosition);
-                    return [4 /*yield*/, prisma_client_1.prisma.positions()];
-                case 3:
-                    positions = _a.sent();
-                    console.log("Fetch all positions: ", positions);
-                    return [4 /*yield*/, prisma_client_1.prisma
-                            .fruit({ name: 'coconut' })
-                            .positions()];
-                case 4:
-                    fruitsWithPositions = _a.sent();
-                    console.log('Fetch coconut with positions', fruitsWithPositions);
-                    return [2 /*return*/];
-            }
+                            })];
+                    case 2:
+                        newPosition = _a.sent();
+                        console.log("Created a new position: ", newPosition);
+                        return [4 /*yield*/, prisma_client_1.prisma.positions()];
+                    case 3:
+                        positions = _a.sent();
+                        console.log("Fetch all positions: ", positions);
+                        return [4 /*yield*/, prisma_client_1.prisma
+                                .fruit({ name: 'coconut' })
+                                .positions()];
+                    case 4:
+                        fruitsWithPositions = _a.sent();
+                        console.log('Fetch coconut with positions', fruitsWithPositions);
+                        return [2 /*return*/];
+                }
+            });
         });
-    });
-}
-main()
-    .then(function () {
-    process.exit(0);
-})["catch"](function (e) { return console.error(e); });
+    }
+});
+// main()
+//   .then(() => {
+//     process.exit(0)
+//   })
+//   .catch(e => console.error(e))
